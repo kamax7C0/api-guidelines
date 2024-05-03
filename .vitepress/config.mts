@@ -105,4 +105,5 @@ export default defineConfig({
   },
   ignoreDeadLinks: true,
   outDir: "public",
+  base: "/api-guidelines/"
 });
