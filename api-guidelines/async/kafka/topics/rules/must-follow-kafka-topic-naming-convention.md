@@ -1,0 +1,57 @@
+---
+id: R200006
+---
+
+# MUST follow kafka topic naming convention
+
+Kafka topic names must adhere to this naming convention to conclude about the content of a topic by its name.
+
+A topic name is made of segments, each separated by a dot ".". Each segment must be written in kebab-case, and only contain lower case English letters, numbers, and the dash character "-".
+
+### Domain events
+
+Topics containing **all** domain events from an event-source must follow the naming scheme:
+
+```text
+de.companyname.events.{context}.{event-source-type}
+```
+
+Example:
+
+```text
+de.companyname.events.checkout.payment
+```
+
+Topics containing only a certain event type from an event-source must follow the naming scheme:
+
+```text
+de.companyname.events.{context}.{event-source-type}.{event-name}
+```
+
+Example:
+
+```text
+de.companyname.events.checkout.payment.payment-received
+```
+
+### Data change events
+
+Topics containing data change events must be named analogue to the contained [data event types](../../../format/cloudevents/rules/must-follow-naming-schema-for-type-context-attribute.md).
+If the data topic contains data events of different types all containing the complete state of one particular entity type, the topic must be named after the entity type. The topic name should be in plural form.
+
+Examples:
+
+```text
+event type de.companyname.data.checkout.payment.v1 can be found in de.companyname.data.checkout.payments.v1
+event type de.companyname.data.products.variation.price.v1 can be found in de.companyname.data.products.variations.prices.v1
+```
+
+::: info Info
+This rule only applies to API topics. Topics which are not part of the API must adhere to the [naming conventions for internal topics (internal link)](https://og2.me/Bhl0TB).
+:::
+
+::: references
+
+- [MUST name events in past tense](../../../format/naming-conventions/rules/must-name-events-in-past-tense.md)
+- [Home Inc. CoE Confluent Cloud - Topic Naming Conventions (internal link)](https://og2.me/Bhl0TB)
+  :::

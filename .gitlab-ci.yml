@@ -1,0 +1,36 @@
+image: node:latest
+
+stages:
+  - install_dependencies
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+install_dependencies:
+  stage: install_dependencies
+  script:
+    - npm install
+
+build:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - public
+
+pages:
+  stage: deploy
+  script:
+    - echo "The site will be deployed to $CI_PAGES_URL"
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+  environment:
+    name: production/${CI_PROJECT_NAME}/${CI_COMMIT_REF_NAME}
+    url: ${CI_PAGES_URL}
