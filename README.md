@@ -20,8 +20,8 @@ npm run dev
 ```
 This will start a local server at http://localhost:5173/ where you can view the documentation.
 
-## Gitlab Pages 
-Currently the content is being deployed to https://api-guidelines-***.gitlab.io/ 
+## GitHub Pages 
+Currently the content is being deployed to https://kamax7c0.github.io/api-guidelines 
 
 ## Contributing
 Contributions to this project are very welcome! To contribute, please use merge requests.

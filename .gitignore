@@ -9,7 +9,6 @@
 .vite_opt_cache
 .vscode
 dist
-public
 cache
 temp
 examples-temp

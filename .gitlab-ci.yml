@@ -20,7 +20,7 @@ build:
     - npm run build
   artifacts:
     paths:
-      - public
+      - dist
 
 pages:
   stage: deploy
@@ -28,7 +28,7 @@ pages:
     - echo "The site will be deployed to $CI_PAGES_URL"
   artifacts:
     paths:
-      - public
+      - dist
   only:
     - main
   environment:

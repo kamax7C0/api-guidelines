@@ -6,7 +6,7 @@ export default defineConfig({
   description: "API Guidelines",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: "/logo.png",
+    logo: "./logo.png",
     search: {
       provider: "local",
     },
@@ -104,6 +104,6 @@ export default defineConfig({
     ],
   },
   ignoreDeadLinks: true,
-  outDir: "public",
+  outDir: "dist",
   base: "/api-guidelines/"
 });

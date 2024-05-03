@@ -15,7 +15,7 @@ features:
     details: Set of best practices and standards for designing, developing, documenting, and maintaining APIs
     link: /api-guidelines/
   - icon: 
-      src: star.png
+      src: ./star.png
       float: right
     title: Home Inc. REST API
     details: Imaginary Home Inc. API Development Guidelines
